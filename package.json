@@ -23,6 +23,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "eslint-config-prettier": "^8.8.0"
   }
 }
