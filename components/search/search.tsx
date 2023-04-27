@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import ISearchPost from "./search-post.type";
-import query from "./search.query";
+import { search } from "./search.query";
 
 export default function Search() {
   const abortController = useRef<AbortController>();
@@ -18,7 +18,7 @@ export default function Search() {
 
     abortController.current = new AbortController();
 
-    const data = await query(searchedValue, abortController.current.signal);
+    const data = await search(searchedValue, abortController.current.signal);
 
     setSearchedResults(data);
   };
