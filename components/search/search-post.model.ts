@@ -1,6 +1,21 @@
-import ISearchPost from "./search-post.type";
+import { IPost, ISearchPost } from "./search-post.type";
 
-const POSTS: ISearchPost[] = [
+const getPostURIs = (): string[] => ['tdd'];
+
+const getPosts = (): ISearchPost[] => [
+  {
+    id: 1,
+    title: "TDD definition",
+    uri: "tdd-definition",
+    category: {
+      id: 1,
+      name: "TDD",
+      uri: "tdd"
+    }
+  },
+];
+
+const getPostsFull = (): IPost[] => [
   {
     id: 1,
     title: "TDD definition",
@@ -14,4 +29,5 @@ const POSTS: ISearchPost[] = [
   },
 ];
 
-export default POSTS;
+export { getPostsFull, getPosts, getPostURIs };
+

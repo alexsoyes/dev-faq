@@ -1,8 +1,9 @@
-import ISearchPost from "@/components/search/search-post.type";
+import { getPostURIs } from "@/components/search/search-post.model";
+import { IPost } from "@/components/search/search-post.type";
 import { findOne } from "@/components/search/search.query";
 import Link from "next/link";
 
-export default function Post(props: { post: ISearchPost }) {
+export default function Post(props: { post: IPost }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <header>
@@ -19,8 +20,10 @@ export default function Post(props: { post: ISearchPost }) {
 }
 
 export async function getStaticPaths() {
+  const URIs = await getPostURIs();
+
   return {
-    paths: [{ params: { uri: "tdd" } }],
+    paths: [{ params: URIs.map((uri: string) => ({ uri })) }],
     fallback: false,
   };
 }

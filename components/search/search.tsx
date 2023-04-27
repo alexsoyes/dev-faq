@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
-import ISearchPost from "./search-post.type";
+import { ISearchPost } from "./search-post.type";
 import { search } from "./search.query";
 
 export default function Search() {

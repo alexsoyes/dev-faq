@@ -1,4 +1,4 @@
-import ISearchPost from "./search-post.type";
+import { IPost, ISearchPost } from "./search-post.type";
 
 export async function search(searchedText: string, signal?: AbortSignal): Promise<ISearchPost[]> {
 
@@ -16,7 +16,7 @@ export async function findAll(slug: string): Promise<ISearchPost[]> {
     return json;
 }
 
-export async function findOne(slug: string): Promise<ISearchPost[] | null> {
+export async function findOne(slug: string): Promise<IPost[] | null> {
     const data = await fetch(`${process.env.API_URL}/?query=${slug}`)
     const json = await data.json()
 

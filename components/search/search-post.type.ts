@@ -1,7 +1,6 @@
-export default interface ISearchPost {
+export interface ISearchPost {
   id: number;
   title: string;
-  body: string;
   uri: string;
 
   category: {
@@ -10,3 +9,8 @@ export default interface ISearchPost {
     uri: string;
   }
 }
+
+export interface IPost extends ISearchPost {
+  body: string;
+}
+
